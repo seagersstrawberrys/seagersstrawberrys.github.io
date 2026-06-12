@@ -415,56 +415,49 @@ img { max-width: 100%; display: block; }
   margin-bottom: 10px;
 }
 
-.produce-summary {
-  font-size: .92rem;
-  color: var(--text-light);
-  line-height: 1.6;
+.expandable { cursor: default; }
+
+.expand-toggle {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--red);
+  cursor: pointer;
+  user-select: none;
+  transition: color .2s;
 }
+
+.expand-toggle:hover { color: #8b0000; }
+
+.expand-arrow {
+  display: inline-block;
+  transition: transform .3s;
+  font-size: .7rem;
+  margin-left: 4px;
+}
+
+.expand-arrow.open { transform: rotate(180deg); }
 
 .produce-detail {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .5s ease, padding .3s ease;
-  text-align: left;
+  transition: max-height .4s ease, padding .4s ease, opacity .4s ease;
+  opacity: 0;
+  padding-top: 0;
 }
 
 .produce-detail.open {
   max-height: 600px;
-  padding-top: 20px;
+  opacity: 1;
+  padding-top: 16px;
 }
 
 .produce-detail p {
-  font-size: .9rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 12px;
+  font-size: .88rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
-
-.expand-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  background: none;
-  border: none;
-  color: var(--red);
-  font-weight: 600;
-  font-size: .85rem;
-  cursor: pointer;
-  padding: 6px 0;
-  font-family: inherit;
-  transition: opacity .2s;
-}
-
-.expand-toggle:hover { opacity: .7; }
-
-.expand-arrow {
-  display: inline-block;
-  font-size: .65rem;
-  transition: transform .3s;
-}
-
-.expand-arrow.up { transform: rotate(180deg); }
 
 /* ─── Quote ─── */
 
@@ -646,6 +639,51 @@ img { max-width: 100%; display: block; }
 }
 
 .farm-info-text strong { color: #fff; }
+
+/* ─── Seasonal Highlights ─── */
+
+.seasonal {
+  background: var(--cream);
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.seasonal-card {
+  background: var(--white);
+  padding: 32px 24px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.seasonal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seasonal-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.seasonal-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--red);
+}
+
+.seasonal-card p {
+  font-size: .9rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
 
 /* ─── Strawberry Line ─── */
 

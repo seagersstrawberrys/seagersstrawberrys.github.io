@@ -31,10 +31,11 @@
         const toggle = card.querySelector('.expand-toggle');
         const detail = card.querySelector('.produce-detail');
         if (toggle && detail) {
+            const origText = toggle.childNodes[0]?.textContent?.trim() || toggle.textContent.trim();
             toggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const isOpen = detail.classList.toggle('open');
-                toggle.innerHTML = (isOpen ? 'Show less ' : 'Read more ') + '<span class="expand-arrow ' + (isOpen ? 'up' : '') + '">&#9660;</span>';
+                toggle.innerHTML = (isOpen ? 'Show less ' : origText + ' ') + '<span class="expand-arrow ' + (isOpen ? 'up' : '') + '">&#9660;</span>';
             });
         }
     });
@@ -92,6 +93,20 @@
             <p><strong>Episode 025 — "Draycott Strawberries Re-visited" (June 2020):</strong> Tiggi caught up with Chris during the height of the pandemic. They discussed the challenges of Brexit, a wet February followed by record-hot April and May, and the massive restrictions enforced by COVID-19 — and how the farm was coping.</p>
             <p>Both episodes are available at <a href="https://www.draycottdiaries.com" target="_blank" rel="noopener" style="color:#b71c1c;text-decoration:underline">draycottdiaries.com</a>.</p>
             <p style="margin-top:20px"><a href="https://www.draycottdiaries.com/025-draycott-strawberries-re-visited/" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:#b71c1c;color:#fff;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none">Listen to Episode 025 ↗</a></p>`
+        },
+        pumpkins: {
+            title: 'Pumpkin Season at Seager\'s',
+            body: `<p>Every <strong>autumn</strong>, Seager's grows its own pumpkins right here on the farm at Draycott. Chris Seager has even been spotted helping the <strong>Draycott Community Shop</strong> pick the best pumpkins for their autumn window display!</p>
+            <p>We grow a range of pumpkin varieties — from the big classic orange carving pumpkins to smaller, tastier cooking pumpkins. They're available from <strong>late September through October</strong> while stocks last.</p>
+            <p>Whether you need a <strong>Halloween jack-o'-lantern</strong> or pumpkins for <strong>roasting, soups, and pies</strong> — we've got you covered. Just pop by the farm shop on Wells Road.</p>
+            <p>Pumpkins are just one of the seasonal treats we offer alongside our famous strawberries — follow us on <a href="https://www.facebook.com/pages/Strawberry%20Farm%20Shop/634138796635413/" target="_blank" rel="noopener" style="color:#b71c1c;text-decoration:underline">Facebook</a> for updates when pumpkin season starts!</p>`
+        },
+        christmas: {
+            title: 'Christmas at Seager\'s',
+            body: `<p>From <strong>late November</strong>, the farm shop on Wells Road stocks fresh <strong>Christmas trees</strong> in two sizes — small and large. These are locally sourced, fresh-cut trees with that wonderful festive pine scent.</p>
+            <p>Alongside Christmas trees, we carry a full range of <strong>winter vegetables</strong> for your Christmas dinner — sprouts, parsnips, carrots, potatoes, and all the trimmings.</p>
+            <p>Fresh trees sell out fast, so we recommend coming <strong>early in December</strong> to get the best pick. Once they're gone, that's it until next year!</p>
+            <p>We've been supplying Christmas trees to the Draycott community for years — it's become a festive tradition for many local families.</p>`
         }
     };
 
