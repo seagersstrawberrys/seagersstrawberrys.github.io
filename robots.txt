@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seagersstrawberrys.github.io/sitemap.xml
