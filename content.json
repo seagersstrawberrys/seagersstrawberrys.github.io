@@ -1,0 +1,176 @@
+{
+  "seo": {
+    "title": "Seager's Fruit & Veg | Draycott, Somerset",
+    "description": "Family-run fruit and vegetable farm shop in Draycott, Somerset. Fresh strawberries, seasonal produce, pumpkins & Christmas trees. Three generations of quality."
+  },
+  "hero": {
+    "badge": "Family-Run Since the 1940s",
+    "heading": "Seager's Fruit & Veg",
+    "subtext": "Fresh from our fields to your table — three generations of Somerset strawberry growers on Wells Road, Draycott",
+    "btn1": "Explore Our Produce",
+    "btn2": "Our Story"
+  },
+  "about": {
+    "heading": "The Seager Family Story",
+    "subtitle": "From a wartime roadside stall to a beloved Somerset farm shop",
+    "paragraphs": [
+      "Seager's has been growing strawberries on Wells Road, Draycott, since <strong>Margaret Seagers</strong> first set up her roadside stall while her husband <strong>Ted</strong> served as a mechanic in the Second World War. What started as a small wartime venture grew into a beloved local business spanning three generations.",
+      "Margaret's son <strong>Andrew</strong> left school at 14 to help expand the farm, working alongside his mother to build the business. Today, Andrew's son <strong>Chris Seagers</strong> carries the tradition forward as the third generation to tend these fields.",
+      "We're proud to be a small, customer-friendly business serving the Cheddar Valley community. Our strawberries are handled only once — when they're picked — and sold the same day at our shop and at Bristol's daily food market."
+    ],
+    "btn": "Read the Full Story →"
+  },
+  "produce": [
+    {
+      "heading": "Strawberries",
+      "description": "Our famous Cheddar Valley strawberries — picked by hand and handled only once. Grown in 125 metres of polytunnels with 29,000 plants. Around 100 trays picked daily in peak season.",
+      "btn": "How We Grow Them →"
+    },
+    {
+      "heading": "Seasonal Fruit & Veg",
+      "description": "Top quality fruit and vegetables all year round. Also available at Bristol's daily food market.",
+      "btn": ""
+    },
+    {
+      "heading": "Pumpkins",
+      "description": "Homegrown pumpkins available in autumn.",
+      "btn": ""
+    },
+    {
+      "heading": "Christmas Trees",
+      "description": "Fresh Christmas trees available during the festive season.",
+      "btn": ""
+    }
+  ],
+  "quote": {
+    "text": "\"We pride ourselves on being small and customer friendly. Our strawberries have only been handled once — when they are picked. That's what makes them taste so good.\"",
+    "cite": "— Chris Seagers, third-generation grower"
+  },
+  "timeline": [
+    {
+      "year": "1940s",
+      "heading": "How It Began",
+      "text": "While Ted Seagers served as a mechanic in WWII, his wife Margaret started selling strawberries from a roadside stall on Wells Road. What began as something to keep her busy grew into a family legacy."
+    },
+    {
+      "year": "1960s",
+      "heading": "Andrew Joins",
+      "text": "Margaret's son Andrew left school at 14 to work full-time on the strawberry farm, helping to expand the business and increase production."
+    },
+    {
+      "year": "1990s",
+      "heading": "Chris Takes Over",
+      "text": "The third generation, Chris Seagers, joined the family business after leaving school, bringing new energy and modern growing techniques while preserving the traditional values."
+    },
+    {
+      "year": "2017",
+      "heading": "Weston Mercury Feature",
+      "text": "The Weston Mercury visited the farm to document the journey \"from greenhouse to shop floor,\" sharing the Seagers story with readers across Somerset."
+    },
+    {
+      "year": "2020",
+      "heading": "Draycott Diaries Podcast",
+      "text": "Chris and Andrew appeared on the Draycott Diaries village podcast, chatting about farming life, bees, strawberries, and community — and revealing the time a seal visited the village!"
+    },
+    {
+      "year": "2024",
+      "heading": "BBC News & Radio",
+      "text": "Chris featured on BBC News and BBC Radio Somerset discussing the challenges of finding fruit pickers post-Brexit and how the wet winter led to more \"flavoursome\" strawberries."
+    }
+  ],
+  "stats": [
+    { "number": "3", "label": "Generations" },
+    { "number": "29,000", "label": "Strawberry Plants" },
+    { "number": "125m", "label": "Polytunnels" },
+    { "number": "100+", "label": "Trays Picked Daily" },
+    { "number": "Bristol", "label": "Daily Food Market" },
+    { "number": "1940s", "label": "Founded" }
+  ],
+  "farmInfo": "We also supply <strong>local shops and restaurants</strong> across the Cheddar Valley area. Our strawberries are known for being some of the freshest in Somerset — picked in the morning and sold the same day.",
+  "strawberryLine": {
+    "heading": "The Strawberry Line",
+    "paragraphs": [
+      "The Cheddar Valley has been famous for strawberries since the <strong>1800s</strong>, grown on the south-facing slopes of the Mendip Hills. The <strong>Cheddar Valley Railway</strong> — nicknamed <strong>\"The Strawberry Line\"</strong> — once carried millions of freshly picked strawberries to London markets.",
+      "Today, the old railway line is a <strong>10-mile walking and cycling path</strong> from Cheddar to Yatton, with plans to extend from Shepton Mallet to Clevedon. And Seager's strawberries still grow in the very same soil they did a century ago.",
+      "<em>\"The locally grown strawberries still grow today in the very spots they did back then.\"</em> — Strawberryfield Park"
+    ]
+  },
+  "hours": {
+    "heading": "Opening Hours",
+    "days": [
+      { "day": "Monday", "hours": "08:00 – 17:00" },
+      { "day": "Tuesday", "hours": "08:00 – 17:00" },
+      { "day": "Wednesday", "hours": "08:00 – 17:00" },
+      { "day": "Thursday", "hours": "08:00 – 17:00" },
+      { "day": "Friday", "hours": "08:00 – 17:00" },
+      { "day": "Saturday", "hours": "08:00 – 17:00" },
+      { "day": "Sunday", "hours": "08:00 – 17:00" }
+    ]
+  },
+  "location": {
+    "name": "Seager's Fruit & Veg",
+    "address": "Wells Road, Draycott",
+    "area": "Near Cheddar, Somerset",
+    "postcode": "BS27 3ST",
+    "phone": "01749 870519",
+    "note": "Located on the A371 between Draycott and Rodney Stoke."
+  },
+  "footer": "© 2026 Seager's Fruit & Veg, Draycott, Somerset",
+  "footerNote": "Three generations of Somerset strawberry growers — family-run since the 1940s",
+  "modals": {
+    "history": {
+      "title": "The Full Seager Family Story",
+      "body": "<p>Seager's Fruit & Veg began in the <strong>1940s</strong>, during the Second World War. While <strong>Ted Seagers</strong> served as a mechanic in the armed forces, his wife <strong>Margaret Seagers</strong> wanted something to keep herself busy. She started selling strawberries from a simple roadside stall on <strong>Wells Road, Draycott</strong> — right where the farm shop still stands today.</p><p>What began as a small wartime venture grew into something far bigger. Margaret's son <strong>Andrew Seagers</strong> left school at just 14 years old to help expand the business, working alongside his mother to increase production and establish the family name in the Cheddar Valley.</p><p>Today, the third generation — <strong>Chris Seagers</strong> — runs the farm. Chris joined after leaving school, just as his father did, and has modernised the business while keeping the same core values: quality, freshness, and community.</p><p>Chris says: <em>\"As a family business we pride ourselves on being small and customer friendly.\"</em></p><p>The farm now has <strong>15,000 plants in greenhouses</strong> and <strong>14,000 more across polytunnels</strong>, with 125 metres of polytunnels in total. Through the peak season in May and June, they pick around <strong>100 trays of strawberries a day</strong>, all sent out the same day.</p><p>Their strawberries are famous for being handled <strong>only once</strong> — when they are picked — making them some of the freshest you'll find anywhere in Somerset.</p><p>The business sells from its farm shop on Wells Road, at <strong>Bristol's daily food market</strong>, and to local shops and restaurants across the region.</p><em>\"Granddad was serving in the war as a mechanic and my grandma wanted something to do so she started selling her strawberries in Wells Road, where our shop is now. The season was a lot shorter back then and it was not her full-time job, but she enjoyed it.\" — Chris Seagers</em>"
+    },
+    "growing": {
+      "title": "How We Grow Our Strawberries",
+      "body": "<p>The Seagers growing operation runs <strong>year-round</strong> to ensure a constant flow of high-quality strawberries. While June is considered the main season, the business works across all seasons to stay productive.</p><h3>The Numbers</h3><p>Around <strong>15,000 plants in the greenhouse</strong> provide an early start to the season, while another <strong>14,000 plants across polytunnels and open tunnels</strong> extend the harvest well into summer and beyond. In total, the farm has <strong>125 metres of polytunnels</strong> filled with strawberry plants.</p><h3>Daily Picking</h3><p>Through May and June, the team aims to pick around <strong>100 trays a day</strong>. Every single strawberry is <strong>hand-picked</strong> and handled only once — at the moment of picking. This minimal handling is what keeps the fruit so fresh and undamaged.</p><h3>Pollination</h3><p>The farm uses <strong>bees for natural pollination</strong> in their polytunnels, as Andrew and Chris discussed on the Draycott Diaries podcast. This traditional approach helps produce the best-quality fruit.</p><h3>Weather Impact</h3><p>In 2024, the wettest winter on record in Somerset caused strawberries to ripen later than usual. But Chris noted this could actually improve the taste: <em>\"due to the fruit being left to naturally ripen this year, I was expecting our strawberries to be even more flavoursome than usual.\"</em></p><em>\"We have around 15,000 plants in our green house and another 14,000 across our poly houses and open tunnels. We are considered quite small for the industry but we try to keep our business local.\" — Chris Seagers</em>"
+    },
+    "market": {
+      "title": "Bristol Daily Food Market",
+      "body": "<p>In addition to the farm shop on Wells Road, Seager's strawberries are sold at <strong>Bristol's daily food market</strong> — bringing the taste of the Cheddar Valley to the city.</p><p>This allows city-dwellers and visitors to Bristol to enjoy the same freshly picked, single-handled strawberries that customers have been buying direct from the farm for generations.</p><p>The farm also supplies <strong>local shops and restaurants</strong> across the Cheddar Valley and Mendip area.</p>"
+    },
+    "bbc": {
+      "title": "BBC News & BBC Radio Somerset",
+      "body": "<p>In <strong>June 2024</strong>, Seager's was featured in a <strong>BBC News</strong> article titled <em>\"Delayed strawberries may be 'well worth the wait'\"</em>, which covered how the record-breaking wet winter in Somerset affected strawberry growing.</p><p>Chris Seager was quoted explaining that while the fruit took longer to ripen, the slower growing process meant they would be even more <strong>\"flavoursome\"</strong> than usual — larger, juicier, and better-tasting.</p><p>The same month, Chris appeared on <strong>BBC Radio Somerset</strong> in a 3-minute segment called <em>\"Fruit picking: 'no one wants to do it'\"</em>, discussing the industry's struggle to find fruit pickers after Brexit. He explained that Polish workers who had been coming for 18-20 years could no longer be replaced, leaving him with spare fields he couldn't plant.</p><p>Chris said: <em>\"No one wants to do it because it's hard work. We used to have lots of Polish people who had been coming for 18 to 20 years, but now we can't get any new people to replace them because of Brexit.\"</em></p><p>The BBC coverage brought national attention to the challenges facing small British fruit growers in the post-Brexit era.</p>"
+    },
+    "weston": {
+      "title": "Weston Mercury Feature (2017)",
+      "body": "<p>In <strong>May 2017</strong>, The Weston Mercury visited Seagers Cheddar Valley Strawberries for a feature titled <em>\"TIMELINE: From greenhouse to shop floor – the story of Somerset's strawberries\"</em>.</p><p>Reporter Eleanor Young documented the full journey of how strawberries go from the greenhouse to the shop floor, interviewing Chris Seagers about the family history and daily operations.</p><p>The article covered the three-generation family story, the growing process, and the business philosophy of staying small, local, and customer-focused.</p><p>Photographs from the visit showed Chris Seagers and staff member Carolyn Matthews putting out strawberries at the shop.</p>"
+    },
+    "podcast": {
+      "title": "Draycott Diaries Podcast",
+      "body": "<p>Seager's appeared on the <strong>Draycott Diaries</strong> village podcast in two episodes:</p><p><strong>Episode 015 — \"Draycott Strawberries and Cream\" (March 2020):</strong> Host Tiggi chatted with father-and-son duo <strong>Andrew and Chris Seager</strong> about the ups and downs of farming life, the use of bees for pollination, their strawberries, and what community means to them. The episode also revealed a surprising fact — a <strong>seal once visited the village</strong>!</p><p><strong>Episode 025 — \"Draycott Strawberries Re-visited\" (June 2020):</strong> Tiggi caught up with Chris during the height of the pandemic. They discussed the challenges of Brexit, a wet February followed by record-hot April and May, and the massive restrictions enforced by COVID-19 — and how the farm was coping.</p><p>Both episodes are available at <a href=\"https://www.draycottdiaries.com\" target=\"_blank\" rel=\"noopener\" style=\"color:#b71c1c;text-decoration:underline\">draycottdiaries.com</a>.</p>"
+    }
+  },
+  "products": [
+    { "id": "s1", "name": "Strawberries", "cat": "Strawberries", "icon": "🍓", "price": 3.00, "feat": true },
+    { "id": "s2", "name": "Strawbs x2", "cat": "Strawberries", "icon": "🍓", "price": 6.00, "feat": true },
+    { "id": "s4", "name": "Strawbs x4", "cat": "Strawberries", "icon": "🍓", "price": 10.00, "feat": true },
+    { "id": "skg", "name": "Strawbs 1kg tray", "cat": "Strawberries", "icon": "🍓", "price": 10.00, "feat": true },
+    { "id": "rasp", "name": "Raspberries", "cat": "Berries", "icon": "🍇", "price": 3.50 },
+    { "id": "blue", "name": "Blueberries", "cat": "Berries", "icon": "🫐", "price": 3.50 },
+    { "id": "blkb", "name": "Blackberries", "cat": "Berries", "icon": "🍇", "price": 3.00 },
+    { "id": "cher", "name": "Cherries", "cat": "Berries", "icon": "🍒", "price": 4.00 },
+    { "id": "app", "name": "Apples", "cat": "Fruit", "icon": "🍎", "price": 2.50 },
+    { "id": "pear", "name": "Pears", "cat": "Fruit", "icon": "🍐", "price": 2.50 },
+    { "id": "plum", "name": "Plums", "cat": "Fruit", "icon": "🫐", "price": 3.00 },
+    { "id": "rhub", "name": "Rhubarb", "cat": "Fruit", "icon": "🥬", "price": 2.00 },
+    { "id": "pot", "name": "Potatoes", "cat": "Veg", "icon": "🥔", "price": 1.50 },
+    { "id": "car", "name": "Carrots", "cat": "Veg", "icon": "🥕", "price": 1.20 },
+    { "id": "on", "name": "Onions", "cat": "Veg", "icon": "🧅", "price": 1.50 },
+    { "id": "cab", "name": "Cabbage", "cat": "Veg", "icon": "🥬", "price": 1.50 },
+    { "id": "cau", "name": "Cauliflower", "cat": "Veg", "icon": "🥦", "price": 2.00 },
+    { "id": "bro", "name": "Broccoli", "cat": "Veg", "icon": "🥦", "price": 2.00 },
+    { "id": "cour", "name": "Courgettes", "cat": "Veg", "icon": "🥒", "price": 2.50 },
+    { "id": "tom", "name": "Tomatoes", "cat": "Veg", "icon": "🍅", "price": 3.50 },
+    { "id": "cuc", "name": "Cucumber", "cat": "Veg", "icon": "🥒", "price": 1.50 },
+    { "id": "let", "name": "Lettuce", "cat": "Veg", "icon": "🥬", "price": 1.20 },
+    { "id": "bean", "name": "Runner Beans", "cat": "Veg", "icon": "🫘", "price": 3.00 },
+    { "id": "peas", "name": "Peas", "cat": "Veg", "icon": "🫛", "price": 3.00 },
+    { "id": "beet", "name": "Beetroot", "cat": "Veg", "icon": "🫘", "price": 2.00 },
+    { "id": "pump", "name": "Pumpkin", "cat": "Seasonal", "icon": "🎃", "price": 4.00 },
+    { "id": "xts", "name": "Xmas Tree (sm)", "cat": "Seasonal", "icon": "🎄", "price": 20.00 },
+    { "id": "xtl", "name": "Xmas Tree (lg)", "cat": "Seasonal", "icon": "🎄", "price": 35.00 }
+  ]
+}

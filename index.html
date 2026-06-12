@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seager's Fruit & Veg | Draycott, Somerset</title>
+    <meta name="description" content="Family-run fruit and vegetable farm shop in Draycott, Somerset. Fresh strawberries, seasonal produce, pumpkins & Christmas trees. Three generations of quality.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Seager's</a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#produce">Produce</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#hours">Visit</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">Family-Run Since the 1940s</span>
+            <h1>Seager's Fruit & Veg</h1>
+            <p>Fresh from our fields to your table — three generations of Somerset strawberry growers on Wells Road, Draycott</p>
+            <a href="#produce" class="btn">Explore Our Produce</a>
+            <a href="#timeline" class="btn btn-outline">Our Story</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>The Seager Family Story</h2>
+            <p class="section-sub">From a wartime roadside stall to a beloved Somerset farm shop</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Seager's has been growing strawberries on Wells Road, Draycott, since <strong>Margaret Seagers</strong> first set up her roadside stall while her husband <strong>Ted</strong> served as a mechanic in the Second World War. What started as a small wartime venture grew into a beloved local business spanning three generations.</p>
+                    <p>Margaret's son <strong>Andrew</strong> left school at 14 to help expand the farm, working alongside his mother to build the business. Today, Andrew's son <strong>Chris Seagers</strong> carries the tradition forward as the third generation to tend these fields.</p>
+                    <p>We're proud to be a small, customer-friendly business serving the Cheddar Valley community. Our strawberries are handled only once — when they're picked — and sold the same day at our shop and at Bristol's daily food market.</p>
+                    <button class="btn btn-sm" data-modal="history">Read the Full Story &rarr;</button>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">Photo: The Seager family</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="section shop">
+        <div class="container">
+            <h2>Order Online</h2>
+            <p class="section-sub">Order for collection from the farm shop on Wells Road</p>
+            <div class="shop-layout">
+                <div class="products-grid" id="productsGrid"></div>
+                <aside class="basket" id="basket">
+                    <h3>Your Basket</h3>
+                    <div class="basket-items" id="basketItems">
+                        <p class="basket-empty">Your basket is empty</p>
+                    </div>
+                    <div class="basket-total">
+                        <span>Total:</span>
+                        <span class="total-amount">&pound;0.00</span>
+                    </div>
+                    <button class="btn btn-sm order-btn" id="orderBtn" disabled>Proceed to Order</button>
+                </aside>
+            </div>
+            <div class="order-form-wrapper" id="orderFormWrapper" style="display:none">
+                <h3>Your Details</h3>
+                <form class="order-form" id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custName">Name</label>
+                            <input type="text" id="custName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custPhone">Phone</label>
+                            <input type="tel" id="custPhone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custDate">Collection Date</label>
+                            <input type="date" id="custDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custTime">Collection Time</label>
+                            <select id="custTime" required>
+                                <option value="">Select time</option>
+                                <option value="08:00-09:00">08:00 - 09:00</option>
+                                <option value="09:00-10:00">09:00 - 10:00</option>
+                                <option value="10:00-11:00">10:00 - 11:00</option>
+                                <option value="11:00-12:00">11:00 - 12:00</option>
+                                <option value="12:00-13:00">12:00 - 13:00</option>
+                                <option value="13:00-14:00">13:00 - 14:00</option>
+                                <option value="14:00-15:00">14:00 - 15:00</option>
+                                <option value="15:00-16:00">15:00 - 16:00</option>
+                                <option value="16:00-17:00">16:00 - 17:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="order-summary" id="orderSummary"></div>
+                    <button type="submit" class="btn">Place Order</button>
+                </form>
+                <div class="order-confirmation" id="orderConfirmation" style="display:none">
+                    <h3>&checkmark; Order Placed</h3>
+                    <p>We'll have your order ready for collection. We'll call if we need to confirm anything.</p>
+                    <button class="btn btn-sm" id="newOrderBtn">New Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produce" class="section produce">
+        <div class="container">
+            <h2>Our Produce</h2>
+            <p class="section-sub">Grown within metres of our stall — the freshest you'll find in Somerset</p>
+            <div class="produce-grid">
+                <div class="produce-card">
+                    <div class="produce-icon">
+                        <svg viewBox="0 0 100 100" fill="none"><path d="M50 15C35 15 22 28 22 43c0 25 28 42 28 42s28-17 28-42c0-15-13-28-28-28z" fill="#D32F2F"/><path d="M35 43c0-8 7-15 15-15" stroke="#388E3C" stroke-width="3" fill="none"/></svg>
+                    </div>
+                    <h3>Strawberries</h3>
+                    <p>Our famous Cheddar Valley strawberries — picked by hand and handled only once. Grown in 125 metres of polytunnels with 29,000 plants. Around 100 trays picked daily in peak season.</p>
+                    <button class="btn btn-sm" data-modal="growing" style="margin-top:12px">How We Grow Them &rarr;</button>
+                </div>
+
+                <div class="produce-card">
+                    <div class="produce-icon">
+                        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" fill="#F57C00"/><circle cx="50" cy="50" r="15" fill="#FF9800"/></svg>
+                    </div>
+                    <h3>Seasonal Fruit & Veg</h3>
+                    <p>Top quality fruit and vegetables all year round. Also available at Bristol's daily food market.</p>
+                </div>
+
+                <div class="produce-card">
+                    <div class="produce-icon">
+                        <svg viewBox="0 0 100 100" fill="none"><ellipse cx="50" cy="55" rx="25" ry="20" fill="#D35400"/><rect x="45" y="20" width="10" height="20" fill="#5D4037"/><path d="M40 60 Q50 70 60 60" fill="#E67E22"/></svg>
+                    </div>
+                    <h3>Pumpkins</h3>
+                    <p>Homegrown pumpkins available in autumn.</p>
+                </div>
+
+                <div class="produce-card">
+                    <div class="produce-icon">
+                        <svg viewBox="0 0 100 100" fill="none"><polygon points="50,15 58,40 85,40 63,56 71,82 50,66 29,82 37,56 15,40 42,40" fill="#2E7D32"/></svg>
+                    </div>
+                    <h3>Christmas Trees</h3>
+                    <p>Fresh Christmas trees available during the festive season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section quote-section">
+        <div class="container">
+            <blockquote>
+                <p>"We pride ourselves on being small and customer friendly. Our strawberries have only been handled once — when they are picked. That's what makes them taste so good."</p>
+                <cite>— Chris Seagers, third-generation grower</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="timeline" class="section timeline-section">
+        <div class="container">
+            <h2>Our Timeline</h2>
+            <p class="section-sub">Three generations of Somerset strawberry growing</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1940s</div>
+                    <div class="timeline-content">
+                        <h3>How It Began</h3>
+                        <p>While Ted Seagers served as a mechanic in WWII, his wife Margaret started selling strawberries from a roadside stall on Wells Road. What began as something to keep her busy grew into a family legacy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1960s</div>
+                    <div class="timeline-content">
+                        <h3>Andrew Joins</h3>
+                        <p>Margaret's son Andrew left school at 14 to work full-time on the strawberry farm, helping to expand the business and increase production.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1990s</div>
+                    <div class="timeline-content">
+                        <h3>Chris Takes Over</h3>
+                        <p>The third generation, Chris Seagers, joined the family business after leaving school, bringing new energy and modern growing techniques while preserving the traditional values.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <h3>Weston Mercury Feature</h3>
+                        <p>The Weston Mercury visited the farm to document the journey "from greenhouse to shop floor," sharing the Seagers story with readers across Somerset.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>Draycott Diaries Podcast</h3>
+                        <p>Chris and Andrew appeared on the Draycott Diaries village podcast, chatting about farming life, bees, strawberries, and community — and revealing the time a seal visited the village!</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>BBC News & Radio</h3>
+                        <p>Chris featured on BBC News and BBC Radio Somerset discussing the challenges of finding fruit pickers post-Brexit and how the wet winter led to more "flavoursome" strawberries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section farm-info">
+        <div class="container">
+            <h2>The Farm By Numbers</h2>
+            <div class="farm-stats">
+                <div class="stat" data-modal="growing">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Generations</span>
+                </div>
+                <div class="stat" data-modal="growing">
+                    <span class="stat-number">29,000</span>
+                    <span class="stat-label">Strawberry Plants</span>
+                </div>
+                <div class="stat" data-modal="growing">
+                    <span class="stat-number">125m</span>
+                    <span class="stat-label">Polytunnels</span>
+                </div>
+                <div class="stat" data-modal="growing">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Trays Picked Daily</span>
+                </div>
+                <div class="stat" data-modal="market">
+                    <span class="stat-number">Bristol</span>
+                    <span class="stat-label">Daily Food Market</span>
+                </div>
+                <div class="stat" data-modal="history">
+                    <span class="stat-number">1940s</span>
+                    <span class="stat-label">Founded</span>
+                </div>
+            </div>
+            <p class="farm-info-text">We also supply <strong>local shops and restaurants</strong> across the Cheddar Valley area. Our strawberries are known for being some of the freshest in Somerset — picked in the morning and sold the same day.</p>
+            <button class="btn btn-sm" data-modal="growing" style="margin-top:32px">Learn About Our Growing Process &rarr;</button>
+        </div>
+    </section>
+
+    <section class="section strawbs-line">
+        <div class="container">
+            <h2>The Strawberry Line</h2>
+            <div class="strawbs-grid">
+                <div class="strawbs-text">
+                    <p>The Cheddar Valley has been famous for strawberries since the <strong>1800s</strong>, grown on the south-facing slopes of the Mendip Hills. The <strong>Cheddar Valley Railway</strong> — nicknamed <strong>"The Strawberry Line"</strong> — once carried millions of freshly picked strawberries to London markets.</p>
+                    <p>Today, the old railway line is a <strong>10-mile walking and cycling path</strong> from Cheddar to Yatton, with plans to extend from Shepton Mallet to Clevedon. And Seager's strawberries still grow in the very same soil they did a century ago.</p>
+                    <p><em>"The locally grown strawberries still grow today in the very spots they did back then."</em> — Strawberryfield Park</p>
+                </div>
+                <div class="strawbs-image">
+                    <div class="image-placeholder">The Strawberry Line railway path</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section press">
+        <div class="container">
+            <h2>As Seen In</h2>
+            <div class="press-logos">
+                <div class="press-item" data-modal="bbc">BBC News</div>
+                <div class="press-item" data-modal="bbc">BBC Radio<br>Somerset</div>
+                <div class="press-item" data-modal="weston">Weston<br>Mercury</div>
+                <div class="press-item" data-modal="podcast">Draycott<br>Diaries</div>
+            </div>
+            <p class="press-hint">Click any logo to read more</p>
+        </div>
+    </section>
+
+    <section id="hours" class="section hours">
+        <div class="container">
+            <h2>Visit Us</h2>
+            <p class="section-sub">Open 7 days a week — including bank holidays</p>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h3>Opening Hours</h3>
+                    <table class="hours-table">
+                        <tr><td>Monday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Tuesday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Wednesday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Thursday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Friday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Saturday</td><td>08:00 – 17:00</td></tr>
+                        <tr><td>Sunday</td><td>08:00 – 17:00</td></tr>
+                    </table>
+                </div>
+                <div class="hours-card location-card">
+                    <h3>Find Us</h3>
+                    <address>
+                        <strong>Seager's Fruit & Veg</strong><br>
+                        Wells Road, Draycott<br>
+                        Near Cheddar, Somerset<br>
+                        BS27 3ST
+                    </address>
+                    <p><strong>Phone:</strong> <a href="tel:01749870519">01749 870519</a></p>
+                    <p class="location-note">Located on the A371 between Draycott and Rodney Stoke.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=51.2548056,-2.7497163" target="_blank" rel="noopener" class="btn btn-sm">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Visit</h3>
+                    <p>Wells Road, Draycott, Somerset, BS27 3ST</p>
+                    <p class="contact-note">Just off the A371 — easy to find!</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3>Call</h3>
+                    <p><a href="tel:01749870519">01749 870519</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </div>
+                    <h3>Follow</h3>
+                    <p><a href="https://www.facebook.com/pages/Strawberry%20Farm%20Shop/634138796635413/" target="_blank" rel="noopener">Facebook &rarr;</a></p>
+                    <p class="contact-note">Follow us for seasonal updates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Seager's Fruit & Veg, Draycott, Somerset</p>
+            <p class="footer-note">Three generations of Somerset strawberry growers — family-run since the 1940s</p>
+        </div>
+    </footer>
+
+    <script src="js/content-loader.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
