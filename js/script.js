@@ -67,7 +67,8 @@
             <p>The farm uses <strong>bees for natural pollination</strong> in their polytunnels, as Andrew and Chris discussed on the Draycott Diaries podcast. This traditional approach helps produce the best-quality fruit.</p>
             <h3>Weather Impact</h3>
             <p>In 2024, the wettest winter on record in Somerset caused strawberries to ripen later than usual. But Chris noted this could actually improve the taste: <em>"due to the fruit being left to naturally ripen this year, I was expecting our strawberries to be even more flavoursome than usual."</em></p>
-            <em>"We have around 15,000 plants in our green house and another 14,000 across our poly houses and open tunnels. We are considered quite small for the industry but we try to keep our business local." — Chris Seagers</em>`
+            <em>"We have around 15,000 plants in our green house and another 14,000 across our poly houses and open tunnels. We are considered quite small for the industry but we try to keep our business local." — Chris Seagers</em>
+            <p style="margin-top:20px"><a href="https://strawberryfieldpark.co.uk/cheddar-strawberries/" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:#b71c1c;color:#fff;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none">Read About Cheddar Strawberries ↗</a></p>`
         },
         market: {
             title: 'Bristol Daily Food Market',
@@ -81,14 +82,16 @@
             <p>Chris Seager was quoted explaining that while the fruit took longer to ripen, the slower growing process meant they would be even more <strong>"flavoursome"</strong> than usual — larger, juicier, and better-tasting.</p>
             <p>The same month, Chris appeared on <strong>BBC Radio Somerset</strong> in a 3-minute segment called <em>"Fruit picking: 'no one wants to do it'"</em>, discussing the industry's struggle to find fruit pickers after Brexit. He explained that Polish workers who had been coming for 18-20 years could no longer be replaced, leaving him with spare fields he couldn't plant.</p>
             <p>Chris said: <em>"No one wants to do it because it's hard work. We used to have lots of Polish people who had been coming for 18 to 20 years, but now we can't get any new people to replace them because of Brexit."</em></p>
-            <p>The BBC coverage brought national attention to the challenges facing small British fruit growers in the post-Brexit era.</p>`
+            <p>The BBC coverage brought national attention to the challenges facing small British fruit growers in the post-Brexit era.</p>
+            <p style="margin-top:20px"><a href="https://www.bbc.co.uk/news/articles/c0jjl18137jo" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:#b71c1c;color:#fff;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none">Read the Full BBC Article ↗</a></p>`
         },
         podcast: {
             title: 'Draycott Diaries Podcast',
             body: `<p>Seager's appeared on the <strong>Draycott Diaries</strong> village podcast in two episodes:</p>
             <p><strong>Episode 015 — "Draycott Strawberries and Cream" (March 2020):</strong> Host Tiggi chatted with father-and-son duo <strong>Andrew and Chris Seager</strong> about the ups and downs of farming life, the use of bees for pollination, their strawberries, and what community means to them. The episode also revealed a surprising fact — a <strong>seal once visited the village</strong>!</p>
             <p><strong>Episode 025 — "Draycott Strawberries Re-visited" (June 2020):</strong> Tiggi caught up with Chris during the height of the pandemic. They discussed the challenges of Brexit, a wet February followed by record-hot April and May, and the massive restrictions enforced by COVID-19 — and how the farm was coping.</p>
-            <p>Both episodes are available at <a href="https://www.draycottdiaries.com" target="_blank" rel="noopener" style="color:#b71c1c;text-decoration:underline">draycottdiaries.com</a>.</p>`
+            <p>Both episodes are available at <a href="https://www.draycottdiaries.com" target="_blank" rel="noopener" style="color:#b71c1c;text-decoration:underline">draycottdiaries.com</a>.</p>
+            <p style="margin-top:20px"><a href="https://www.draycottdiaries.com/025-draycott-strawberries-re-visited/" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:#b71c1c;color:#fff;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none">Listen to Episode 025 ↗</a></p>`
         }
     };
 
