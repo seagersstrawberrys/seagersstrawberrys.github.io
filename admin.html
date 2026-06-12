@@ -3,53 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Seager's Website</title>
+<title>Seager's Strawberries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f5f5; color: #222; }
-  .topbar { background: #b71c1c; color: #fff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-  .topbar h1 { font-size: 1.2rem; font-weight: 600; }
-  .topbar a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .85rem; }
-  .topbar a:hover { color: #fff; }
-  .topbar .actions { display: flex; gap: 12px; align-items: center; }
-  #saveBtn { background: #2e7d32; color: #fff; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: .85rem; }
-  #saveBtn:hover { background: #1b5e20; }
-  #saveBtn:disabled { background: #999; cursor: not-allowed; }
-  #status { font-size: .8rem; color: rgba(255,255,255,.7); }
-  .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
-  .section-card { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-  .section-card h2 { font-size: 1.1rem; color: #b71c1c; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; text-transform: uppercase; letter-spacing: .5px; }
-  .field { margin-bottom: 12px; }
-  .field label { display: block; font-size: .8rem; font-weight: 600; color: #555; margin-bottom: 3px; }
-  .field input, .field textarea, .field select { width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: .9rem; font-family: inherit; }
-  .field input:focus, .field textarea:focus { outline: none; border-color: #b71c1c; box-shadow: 0 0 0 3px rgba(183,28,28,.08); }
-  .field textarea { min-height: 60px; resize: vertical; }
-  .field textarea.lg { min-height: 120px; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-  .hr { border: none; border-top: 1px solid #eee; margin: 16px 0; }
-  .badge { display: inline-block; background: #b71c1c; color: #fff; font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 2px 8px; border-radius: 10px; }
-  .item-group { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 16px; margin-bottom: 12px; position: relative; }
-  .item-group h3 { font-size: .9rem; color: #333; margin-bottom: 8px; }
-  .inline-icon { font-size: 1.2rem; margin-right: 4px; }
-  @media (max-width: 600px) { .row, .row-3 { grid-template-columns: 1fr; } }
-  .Toast { position: fixed; bottom: 24px; right: 24px; background: #2e7d32; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: .9rem; opacity: 0; transform: translateY(20px); transition: all .3s; z-index: 999; }
-  .Toast.show { opacity: 1; transform: translateY(0); }
-  .Toast.error { background: #c62828; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; line-height: 1.6; background: #fcfaf7; }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 96px 0; }
+  .section h2 { font-size: 2.6rem; margin-bottom: 12px; text-align: center; }
+  .section-sub { font-size: 1.1rem; color: #777; text-align: center; margin-bottom: 56px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn { display: inline-block; padding: 14px 32px; background: #b71c1c; color: #fff; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background .3s; border: none; cursor: pointer; }
+  .btn:hover { background: #8e0000; }
+  .btn-sm { padding: 10px 22px; font-size: .9rem; }
+  .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,.4); color: #fff; margin-left: 12px; }
+
+  .admin-bar { position: fixed; top: 0; left: 0; right: 0; background: #1a1a1a; color: #fff; padding: 8px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 9999; height: 44px; }
+  .admin-bar h1 { font-size: .85rem; font-weight: 600; font-family: 'Inter', sans-serif; }
+  .admin-bar .actions { display: flex; gap: 10px; align-items: center; }
+  .admin-bar .status { font-size: .7rem; color: rgba(255,255,255,.4); }
+  .admin-bar a { color: rgba(255,255,255,.5); font-size: .78rem; }
+  .admin-bar a:hover { color: #fff; }
+  .abtn { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); color: #fff; padding: 4px 14px; border-radius: 4px; font-size: .75rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .abtn:hover { background: rgba(255,255,255,.2); }
+  .abtn.green { background: #2e7d32; border-color: #2e7d32; }
+  .abtn.green:hover { background: #1b5e20; }
+  .abtn:disabled { opacity: .4; cursor: not-allowed; }
+  body { padding-top: 44px; }
+
+  [contenteditable="true"] { outline: none; cursor: text; transition: background .15s; border-radius: 2px; padding: 1px 2px; margin: -1px -2px; }
+  [contenteditable="true"]:hover { background: rgba(183, 28, 28, .04); }
+  [contenteditable="true"]:focus { background: rgba(183, 28, 28, .06); box-shadow: 0 0 0 2px rgba(183, 28, 28, .15); }
+  [contenteditable="true"].editing { background: #fff; box-shadow: 0 0 0 2px #b71c1c; }
+
+  [data-add] { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(183,28,28,.1); color: #b71c1c; border: 1px dashed #b71c1c; font-size: 1rem; cursor: pointer; opacity: .3; transition: opacity .2s; margin: 4px; }
+  [data-add]:hover { opacity: 1; background: rgba(183,28,28,.15); }
+
+  .header { position: fixed; top: 44px; left: 0; right: 0; background: rgba(252,250,247,.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; z-index: 100; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+  .logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #b71c1c; letter-spacing: -.5px; }
+  .nav-list { display: flex; gap: 32px; list-style: none; }
+  .nav-list a { font-weight: 500; font-size: .95rem; color: #444; }
+  .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 50%, #1a1a1a 100%); overflow: hidden; }
+  .hero-pattern { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(183,28,28,.12) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 80% 20%, rgba(46,125,50,.08) 0%, transparent 60%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, #fcfaf7, transparent); }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; padding: 6px 18px; border: 1px solid rgba(255,255,255,.2); border-radius: 100px; font-size: .8rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); color: #fff; margin-bottom: 20px; }
+  .hero p { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,.7); max-width: 560px; margin: 0 auto 36px; }
+  [contenteditable="true"].hero-text { color: rgba(255,255,255,.7); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-text p { margin-bottom: 16px; color: #444; font-size: 1.05rem; line-height: 1.8; }
+  .image-placeholder { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg,#e8ddd0,#dfd2c0); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #999; font-style: italic; font-size: .95rem; position: relative; overflow: hidden; }
+  .image-placeholder::before { content: '🍓'; position: absolute; font-size: 80px; opacity: .15; }
+  .produce-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+  .produce-card { background: #fff; padding: 36px 28px 28px; border-radius: 12px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+  .produce-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+  .produce-card p { font-size: .95rem; color: #555; line-height: 1.6; }
+  .produce-icon { width: 72px; height: 72px; margin: 0 auto 16px; }
+  .produce-icon svg { width: 100%; height: 100%; }
+  .prod-del { position: absolute; top: 8px; right: 8px; background: rgba(198,40,40,.8); color: #fff; border: none; width: 24px; height: 24px; border-radius: 50%; font-size: .8rem; cursor: pointer; opacity: 0; transition: opacity .2s; }
+  .produce-card:hover .prod-del { opacity: 1; }
+  .quote-section { background: #b71c1c; color: #fff; text-align: center; padding: 96px 0; overflow: hidden; }
+  .quote-section::before { content: '"'; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); font-size: 300px; font-family: 'Playfair Display', Georgia, serif; color: rgba(255,255,255,.05); line-height: 1; }
+  .quote-section blockquote { max-width: 720px; margin: 0 auto; position: relative; }
+  .quote-section p { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; line-height: 1.5; font-style: italic; margin-bottom: 24px; }
+  .quote-section cite { font-style: normal; color: rgba(255,255,255,.7); font-size: 1rem; }
+  .timeline-section { background: #fcfaf7; }
+  .timeline { position: relative; max-width: 720px; margin: 0 auto; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: #e0d5c8; }
+  .timeline-item { position: relative; margin-bottom: 48px; padding-left: 32px; }
+  .timeline-item::before { content: ''; position: absolute; left: -32px; top: 6px; width: 14px; height: 14px; background: #b71c1c; border-radius: 50%; border: 3px solid #fcfaf7; box-shadow: 0 0 0 2px #b71c1c; }
+  .timeline-year { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; font-weight: 700; color: #b71c1c; margin-bottom: 4px; }
+  .timeline-content h3 { font-size: 1.1rem; margin-bottom: 8px; color: #222; }
+  .timeline-content p { color: #555; line-height: 1.7; font-size: .95rem; }
+  .farm-info { background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 100%); color: #fff; text-align: center; }
+  .farm-info h2 { color: #fff; }
+  .farm-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin: 48px 0 40px; }
+  .stat { background: rgba(255,255,255,.06); padding: 28px 16px; border-radius: 12px; }
+  .stat-number { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 700; color: #ef5350; margin-bottom: 6px; }
+  .stat-label { font-size: .8rem; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: 1px; }
+  .farm-info-text { max-width: 640px; margin: 0 auto; color: rgba(255,255,255,.75); font-size: 1.05rem; line-height: 1.7; }
+  .strawbs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 48px; }
+  .strawbs-text p { color: #444; line-height: 1.8; margin-bottom: 16px; font-size: 1.05rem; }
+  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .hours-card { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+  .hours-card h3 { font-size: 1.4rem; margin-bottom: 24px; color: #b71c1c; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .hours-table { width: 100%; border-collapse: collapse; }
+  .hours-table td { padding: 10px 0; border-bottom: 1px solid #f0ebe5; font-size: 1rem; }
+  .hours-table td:first-child { font-weight: 600; width: 140px; color: #333; }
+  .hours-table td:last-child { color: #555; text-align: right; }
+  .location-card address { font-style: normal; line-height: 1.8; margin-bottom: 16px; font-size: 1.05rem; color: #333; }
+  .location-note { color: #888; font-size: .9rem; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-top: 48px; }
+  .contact-card { background: #fff; padding: 36px 28px; border-radius: 12px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+  .contact-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #b71c1c; margin-bottom: 12px; }
+  .contact-card p { color: #555; font-size: .95rem; }
+  .footer { background: #1a1a1a; color: rgba(255,255,255,.5); padding: 40px 0; text-align: center; font-size: .9rem; }
+  .Toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: .82rem; opacity: 0; transition: all .3s; z-index: 99999; }
+  .Toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .Toast.success { background: #2e7d32; color: #fff; }
+  .Toast.error { background: #c62828; color: #fff; }
+  .item-edit-bar { display: flex; gap: 6px; align-items: center; justify-content: center; margin-top: 8px; opacity: 0; transition: opacity .2s; }
+  .edit-overlay:hover .item-edit-bar { opacity: 1; }
+  .item-edit-btn { background: #b71c1c; color: #fff; border: none; padding: 3px 10px; border-radius: 4px; font-size: .68rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .item-edit-btn:hover { background: #8e0000; }
+  .item-edit-btn.del { background: #888; }
+  .item-edit-btn.del:hover { background: #c62828; }
+
+  @media (max-width:768px) {
+    .about-grid, .strawbs-grid, .hours-grid { grid-template-columns: 1fr; }
+    .section h2 { font-size: 2rem; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-content .btn-outline { margin-left: 0; margin-top: 12px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <h1>⚙️ Seager's Website Admin</h1>
+<div class="admin-bar">
+  <h1>🍓 Seager's — Click any text to edit</h1>
   <div class="actions">
-    <a href="/" target="_blank">View Site</a>
-    <span id="status"></span>
-    <button id="saveBtn" disabled>Save Changes</button>
+    <a href="/" target="_blank">View</a>
+    <span class="status" id="status">—</span>
+    <button class="abtn" id="addTimelineBtn">+ Timeline</button>
+    <button class="abtn" id="addProduceBtn">+ Produce</button>
+    <button class="abtn green" id="saveBtn" disabled>Save</button>
   </div>
 </div>
 
-<div class="container" id="app"></div>
+<div id="page"></div>
 <div id="toast" class="Toast"></div>
 
 <script>
@@ -64,37 +150,15 @@ async function load() {
   document.getElementById('status').textContent = 'Loaded';
 }
 
-async function save() {
-  const btn = document.getElementById('saveBtn');
-  btn.disabled = true;
-  btn.textContent = 'Saving...';
-  try {
-    collect();
-    const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-    const result = await r.json();
-    if (result.success) {
-      toast('Saved successfully!');
-      document.getElementById('status').textContent = 'Saved ' + new Date().toLocaleTimeString();
-    } else {
-      toast('Save failed', true);
-    }
-  } catch (e) {
-    toast('Error saving', true);
-  }
-  btn.disabled = false;
-  btn.textContent = 'Save Changes';
-}
-
 function collect() {
-  document.querySelectorAll('[data-bind]').forEach(el => {
-    const path = el.dataset.bind.split('.');
+  document.querySelectorAll('[data-path]').forEach(el => {
+    const path = el.dataset.path.split('.');
     let obj = data;
     for (let i = 0; i < path.length - 1; i++) {
       const key = path[i];
       const idx = parseInt(key);
-      if (!isNaN(idx) && Array.isArray(obj)) {
-        obj = obj[idx];
-      } else {
+      if (!isNaN(idx) && Array.isArray(obj)) { obj = obj[idx]; }
+      else {
         if (!obj[key]) obj[key] = {};
         obj = obj[key];
       }
@@ -102,210 +166,107 @@ function collect() {
     const lastKey = path[path.length - 1];
     const lastKeyIdx = parseInt(lastKey);
     if (!isNaN(lastKeyIdx) && Array.isArray(obj)) {
-      obj[lastKeyIdx] = el.value;
+      obj[lastKeyIdx] = el.innerText;
     } else {
-      obj[lastKey] = el.value;
+      obj[lastKey] = el.innerText;
     }
+  });
+  document.querySelectorAll('[data-path-html]').forEach(el => {
+    const path = el.dataset.pathHtml.split('.');
+    let obj = data;
+    for (let i = 0; i < path.length - 1; i++) {
+      const key = path[i];
+      const idx = parseInt(key);
+      if (!isNaN(idx) && Array.isArray(obj)) { obj = obj[idx]; }
+      else {
+        if (!obj[key]) obj[key] = {};
+        obj = obj[key];
+      }
+    }
+    obj[path[path.length - 1]] = el.innerHTML;
   });
 }
 
-function toast(msg, isError) {
+async function save() {
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true; btn.textContent = 'Saving...';
+  try {
+    collect();
+    const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    const result = await r.json();
+    if (result.success) {
+      toast('Saved!', 'success');
+      document.getElementById('status').textContent = 'Saved ' + new Date().toLocaleTimeString();
+    } else { toast('Save failed', 'error'); }
+  } catch (e) { toast('Error saving', 'error'); }
+  btn.disabled = false; btn.textContent = 'Save';
+}
+
+async function delItem(section, idx) {
+  await fetch(`/api/content/${section}/${idx}`, { method: 'DELETE' });
+  await load();
+  toast('Deleted', 'success');
+}
+
+async function addItem(section, template) {
+  await fetch(`/api/content/${section}/add`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ template }) });
+  await load();
+  toast('Added', 'success');
+}
+
+function toast(msg, type) {
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = 'Toast' + (isError ? ' error' : '') + ' show';
-  setTimeout(() => t.className = 'Toast', 2500);
-}
-
-function field(path, label, opts = {}) {
-  let val = '';
-  const parts = path.split('.');
-  let obj = data;
-  let found = true;
-  for (const p of parts) {
-    if (obj && obj[p] !== undefined) {
-      obj = obj[p];
-    } else {
-      found = false;
-      break;
-    }
-  }
-  if (found) val = obj;
-  
-  const id = 'f-' + path.replace(/\./g, '-');
-  const isTextarea = opts.textarea || (typeof val === 'string' && val.length > 80);
-  const tag = isTextarea ? 'textarea' : 'input';
-  const extraAttrs = isTextarea ? '' : `type="${opts.type || 'text'}"`;
-  const cls = isTextarea && opts.lg ? ' lg' : '';
-  const rows = opts.rows || 3;
-  
-  return `<div class="field">
-    <label for="${id}">${label}</label>
-    <${tag} id="${id}" data-bind="${path}" ${extraAttrs} class="${cls}" ${isTextarea ? `rows="${rows}"` : ''}>${isTextarea ? escapeHtml(String(val)) : ''}</${tag}>
-  </div>`;
-}
-
-function fieldVal(path, label, opts = {}) {
-  let val = '';
-  const parts = path.split('.');
-  let obj = data;
-  for (const p of parts) {
-    if (obj && obj[p] !== undefined) obj = obj[p];
-    else { return ''; }
-  }
-  if (obj !== undefined && obj !== null) val = String(obj);
-  
-  const id = 'f-' + path.replace(/\./g, '-');
-  return `<div class="field">
-    <label for="${id}">${label}</label>
-    <input id="${id}" data-bind="${path}" type="${opts.type || 'text'}" value="${escapeHtml(val)}">
-  </div>`;
-}
-
-function textarea(path, label, rows = 6) {
-  return field(path, label, { textarea: true, lg: rows > 4, rows });
+  t.textContent = msg; t.className = 'Toast show ' + type;
+  clearTimeout(t._timeout); t._timeout = setTimeout(() => t.className = 'Toast', 2000);
 }
 
 function escapeHtml(s) {
   if (typeof s !== 'string') return '';
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function ce(path, html) {
+  return `<span contenteditable="true" data-path="${path}">${escapeHtml(html)}</span>`;
+}
+
+function ceHtml(path, html) {
+  return `<span contenteditable="true" data-path-html="${path}">${html}</span>`;
 }
 
 function render() {
-  const app = document.getElementById('app');
-  let html = '';
+  const page = document.getElementById('page');
+  let h = '';
 
-  // SEO
-  html += `<div class="section-card"><h2>SEO / Meta</h2>${fieldVal('seo.title', 'Page Title')}${fieldVal('seo.description', 'Meta Description')}</div>`;
+  h += `<header class="header"><div class="container header-inner"><span class="logo">Seager's</span><nav class="nav"><ul class="nav-list">${['About','Shop','Produce','Timeline','Visit','Contact'].map(n => `<li><a href="#">${n}</a></li>`).join('')}</ul></nav></div></header>`;
 
-  // Hero
-  html += `<div class="section-card"><h2>Hero Section</h2>`;
-  html += fieldVal('hero.badge', 'Badge');
-  html += fieldVal('hero.heading', 'Heading');
-  html += textarea('hero.subtext', 'Subtext', 3);
-  html += `<div class="row">${fieldVal('hero.btn1', 'Button 1')}${fieldVal('hero.btn2', 'Button 2')}</div>`;
-  html += `</div>`;
+  h += `<section class="hero"><div class="hero-pattern"></div><div class="container hero-content"><span class="hero-badge">${ce('hero.badge', data.hero?.badge||'')}</span><h1>${ce('hero.heading', data.hero?.heading||'')}</h1><p class="hero-text">${ce('hero.subtext', data.hero?.subtext||'')}</p><span class="btn">${ce('hero.btn1', data.hero?.btn1||'')}</span> <span class="btn btn-outline">${ce('hero.btn2', data.hero?.btn2||'')}</span></div></section>`;
 
-  // About
-  html += `<div class="section-card"><h2>About Section</h2>`;
-  html += fieldVal('about.heading', 'Heading');
-  html += fieldVal('about.subtitle', 'Subtitle');
-  if (data.about && data.about.paragraphs) {
-    data.about.paragraphs.forEach((p, i) => {
-      html += textarea(`about.paragraphs.${i}`, `Paragraph ${i+1}`, 4);
-    });
-  }
-  html += fieldVal('about.btn', 'Button Text');
-  html += `</div>`;
+  h += `<section id="about" class="section about"><div class="container"><h2>${ce('about.heading', data.about?.heading||'')}</h2><p class="section-sub">${ce('about.subtitle', data.about?.subtitle||'')}</p><div class="about-grid"><div class="about-text">${(data.about?.paragraphs||[]).map((p,i) => `<p>${ceHtml(`about.paragraphs.${i}`, p)}</p>`).join('')}<span class="btn btn-sm">${ce('about.btn', data.about?.btn||'')}</span></div><div class="about-image"><div class="image-placeholder">Photo: The Seager family</div></div></div></div></section>`;
 
-  // Produce
-  html += `<div class="section-card"><h2>Produce Cards</h2>`;
-  if (data.produce) {
-    data.produce.forEach((p, i) => {
-      html += `<div class="item-group"><h3>Card ${i+1}</h3>`;
-      html += fieldVal(`produce.${i}.heading`, 'Heading');
-      html += textarea(`produce.${i}.description`, 'Description', 3);
-      html += fieldVal(`produce.${i}.btn`, 'Button Text');
-      html += `</div>`;
-    });
-  }
-  html += `</div>`;
+  h += `<section id="produce" class="section produce"><div class="container"><h2>Our Produce</h2><p class="section-sub">Grown within metres of our stall</p><div class="produce-grid">${(data.produce||[]).map((p,i) => `<div class="produce-card" style="position:relative"><h3>${ce(`produce.${i}.heading`, p.heading)}</h3><p>${ce(`produce.${i}.description`, p.description)}</p>${p.btn ? `<span class="btn btn-sm">${ce(`produce.${i}.btn`, p.btn)}</span>` : ''}<button class="prod-del" onclick="delItem('produce',${i})">&times;</button></div>`).join('')}</div></div></section>`;
 
-  // Quote
-  html += `<div class="section-card"><h2>Quote Section</h2>`;
-  html += textarea('quote.text', 'Quote Text', 4);
-  html += fieldVal('quote.cite', 'Citation');
-  html += `</div>`;
+  h += `<section class="section quote-section"><div class="container"><blockquote><p>${ceHtml('quote.text', data.quote?.text||'')}</p><cite>${ce('quote.cite', data.quote?.cite||'')}</cite></blockquote></div></section>`;
 
-  // Timeline
-  html += `<div class="section-card"><h2>Timeline</h2>`;
-  if (data.timeline) {
-    data.timeline.forEach((t, i) => {
-      html += `<div class="item-group"><h3>${t.year} — ${t.heading}</h3>`;
-      html += fieldVal(`timeline.${i}.year`, 'Year');
-      html += fieldVal(`timeline.${i}.heading`, 'Heading');
-      html += textarea(`timeline.${i}.text`, 'Text', 3);
-      html += `</div>`;
-    });
-  }
-  html += `</div>`;
+  h += `<section id="timeline" class="section timeline-section"><div class="container"><h2>Our Timeline</h2><p class="section-sub">Three generations of Somerset strawberry growing</p><div class="timeline">${(data.timeline||[]).map((t,i) => `<div class="timeline-item"><div class="timeline-year">${ce(`timeline.${i}.year`, t.year)}</div><div class="timeline-content"><h3>${ce(`timeline.${i}.heading`, t.heading)}</h3><p>${ce(`timeline.${i}.text`, t.text)}</p></div><div class="item-edit-bar"><button class="item-edit-btn del" onclick="delItem('timeline',${i})">Delete</button></div></div>`).join('')}</div></div></section>`;
 
-  // Stats
-  html += `<div class="section-card"><h2>Farm Stats</h2>`;
-  if (data.stats) {
-    data.stats.forEach((s, i) => {
-      html += `<div class="item-group"><div class="row">${fieldVal(`stats.${i}.number`, 'Number')}${fieldVal(`stats.${i}.label`, 'Label')}</div></div>`;
-    });
-  }
-  html += `</div>`;
+  h += `<section class="section farm-info"><div class="container"><h2>The Farm By Numbers</h2><div class="farm-stats">${(data.stats||[]).map((s,i) => `<div class="stat"><span class="stat-number">${ce(`stats.${i}.number`, s.number)}</span><span class="stat-label">${ce(`stats.${i}.label`, s.label)}</span></div>`).join('')}</div><p class="farm-info-text">${ceHtml('farmInfo', data.farmInfo||'')}</p></div></section>`;
 
-  // Farm Info
-  html += `<div class="section-card"><h2>Farm Info Text</h2>`;
-  html += textarea('farmInfo', 'Farm Info Paragraph', 4);
-  html += `</div>`;
+  h += `<section class="section strawbs-line"><div class="container"><h2>${ce('strawberryLine.heading', data.strawberryLine?.heading||'')}</h2><div class="strawbs-grid"><div class="strawbs-text">${(data.strawberryLine?.paragraphs||[]).map((p,i) => `<p>${ceHtml(`strawberryLine.paragraphs.${i}`, p)}</p>`).join('')}</div><div class="strawbs-image"><div class="image-placeholder">The Strawberry Line railway path</div></div></div></div></section>`;
 
-  // Strawberry Line
-  html += `<div class="section-card"><h2>Strawberry Line Section</h2>`;
-  html += fieldVal('strawberryLine.heading', 'Heading');
-  if (data.strawberryLine && data.strawberryLine.paragraphs) {
-    data.strawberryLine.paragraphs.forEach((p, i) => {
-      html += textarea(`strawberryLine.paragraphs.${i}`, `Paragraph ${i+1}`, 4);
-    });
-  }
-  html += `</div>`;
+  h += `<section id="hours" class="section hours"><div class="container"><h2>Visit Us</h2><p class="section-sub">Open 7 days a week</p><div class="hours-grid"><div class="hours-card"><h3>Opening Hours</h3><table class="hours-table">${(data.hours?.days||[]).map((d,i) => `<tr><td>${ce(`hours.days.${i}.day`, d.day)}</td><td>${ce(`hours.days.${i}.hours`, d.hours)}</td></tr>`).join('')}</table></div><div class="hours-card location-card"><h3>Find Us</h3><address><strong>${ce('location.name', data.location?.name||'')}</strong><br>${ce('location.address', data.location?.address||'')}<br>${ce('location.area', data.location?.area||'')}<br>${ce('location.postcode', data.location?.postcode||'')}</address><p><strong>Phone:</strong> ${ce('location.phone', data.location?.phone||'')}</p><p class="location-note">${ce('location.note', data.location?.note||'')}</p></div></div></div></section>`;
 
-  // Hours
-  html += `<div class="section-card"><h2>Opening Hours</h2>`;
-  html += fieldVal('hours.heading', 'Section Heading');
-  if (data.hours && data.hours.days) {
-    data.hours.days.forEach((d, i) => {
-      html += `<div class="item-group"><div class="row">${fieldVal(`hours.days.${i}.day`, 'Day')}${fieldVal(`hours.days.${i}.hours`, 'Hours')}</div></div>`;
-    });
-  }
-  html += `</div>`;
+  h += `<section id="contact" class="section contact"><div class="container"><h2>Get In Touch</h2><div class="contact-grid"><div class="contact-card"><h3>Visit</h3><p>${ce('location.address', data.location?.address||'')}, ${ce('location.area', data.location?.area||'')}</p></div><div class="contact-card"><h3>Call</h3><p>${ce('location.phone', data.location?.phone||'')}</p></div><div class="contact-card"><h3>Follow</h3><p>Facebook</p></div></div></div></section>`;
 
-  // Location
-  html += `<div class="section-card"><h2>Location / Contact</h2>`;
-  html += fieldVal('location.name', 'Business Name');
-  html += fieldVal('location.address', 'Address');
-  html += `<div class="row">${fieldVal('location.area', 'Area')}${fieldVal('location.postcode', 'Postcode')}</div>`;
-  html += `<div class="row">${fieldVal('location.phone', 'Phone')}${fieldVal('location.note', 'Location Note')}</div>`;
-  html += `</div>`;
+  h += `<footer class="footer"><div class="container footer-inner"><p>${ce('footer', data.footer||'')}</p><p style="font-style:italic;color:rgba(255,255,255,.35);font-size:.85rem;">${ce('footerNote', data.footerNote||'')}</p></div></footer>`;
 
-  // Footer
-  html += `<div class="section-card"><h2>Footer</h2>`;
-  html += fieldVal('footer', 'Footer Text');
-  html += fieldVal('footerNote', 'Footer Note');
-  html += `</div>`;
-
-  // Modal content (full HTML)
-  html += `<div class="section-card"><h2>Modal Content (Full HTML)</h2>`;
-  if (data.modals) {
-    for (const [key, modal] of Object.entries(data.modals)) {
-      html += `<div class="item-group"><h3>${modal.title}</h3>`;
-      html += `<div class="row">${fieldVal(`modals.${key}.title`, 'Title')}</div>`;
-      html += textarea(`modals.${key}.body`, 'Body HTML', 10);
-      html += `</div>`;
-    }
-  }
-  html += `</div>`;
-
-  // Products
-  html += `<div class="section-card"><h2>Shop Products</h2>`;
-  if (data.products) {
-    data.products.forEach((p, i) => {
-      const feat = p.feat ? '<span class="badge" style="float:right">Best Seller</span>' : '';
-      html += `<div class="item-group"><h3>${feat}${p.icon} ${p.name}</h3>`;
-      html += `<div class="row-3">${fieldVal(`products.${i}.name`, 'Name')}${fieldVal(`products.${i}.cat`, 'Category')}${fieldVal(`products.${i}.icon`, 'Icon')}</div>`;
-      html += `<div class="row">${fieldVal(`products.${i}.price`, 'Price', { type: 'number' })}${fieldVal(`products.${i}.id`, 'ID')}</div>`;
-      html += `</div>`;
-    });
-  }
-  html += `</div>`;
-
-  app.innerHTML = html;
+  page.innerHTML = h;
 }
 
 document.getElementById('saveBtn').addEventListener('click', save);
+document.addEventListener('keydown', e => { if ((e.ctrlKey||e.metaKey) && e.key === 's') { e.preventDefault(); save(); } });
+document.getElementById('addProduceBtn').addEventListener('click', () => addItem('produce', {heading:"New Item", description:"", btn:""}));
+document.getElementById('addTimelineBtn').addEventListener('click', () => addItem('timeline', {year:"2026", heading:"New Event", text:""}));
+
 load();
 </script>
 </body>

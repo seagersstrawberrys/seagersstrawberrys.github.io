@@ -49,7 +49,7 @@
             title: 'The Full Seager Family Story',
             body: `<p>Seager's Fruit & Veg began in the <strong>1940s</strong>, during the Second World War. While <strong>Ted Seagers</strong> served as a mechanic in the armed forces, his wife <strong>Margaret Seagers</strong> wanted something to keep herself busy. She started selling strawberries from a simple roadside stall on <strong>Wells Road, Draycott</strong> — right where the farm shop still stands today.</p>
             <p>What began as a small wartime venture grew into something far bigger. Margaret's son <strong>Andrew Seagers</strong> left school at just 14 years old to help expand the business, working alongside his mother to increase production and establish the family name in the Cheddar Valley.</p>
-            <p>Today, the third generation — <strong>Chris Seagers</strong> — runs the farm. Chris joined after leaving school, just as his father did, and has modernised the business while keeping the same core values: quality, freshness, and community.</p>
+            <p>Today, the third generation — <strong>Chris Seagers</strong> — runs the farm. Chris joined after leaving school, just as his father did, and has modernised the business while keeping the same core values: quality, freshness, and community. Chris's son <strong>Lenny</strong> is now helping out too, making it four generations of Seagers growing strawberries on Wells Road.</p>
             <p>Chris says: <em>"As a family business we pride ourselves on being small and customer friendly."</em></p>
             <p>The farm now has <strong>15,000 plants in greenhouses</strong> and <strong>14,000 more across polytunnels</strong>, with 125 metres of polytunnels in total. Through the peak season in May and June, they pick around <strong>100 trays of strawberries a day</strong>, all sent out the same day.</p>
             <p>Their strawberries are famous for being handled <strong>only once</strong> — when they are picked — making them some of the freshest you'll find anywhere in Somerset.</p>
@@ -82,13 +82,6 @@
             <p>The same month, Chris appeared on <strong>BBC Radio Somerset</strong> in a 3-minute segment called <em>"Fruit picking: 'no one wants to do it'"</em>, discussing the industry's struggle to find fruit pickers after Brexit. He explained that Polish workers who had been coming for 18-20 years could no longer be replaced, leaving him with spare fields he couldn't plant.</p>
             <p>Chris said: <em>"No one wants to do it because it's hard work. We used to have lots of Polish people who had been coming for 18 to 20 years, but now we can't get any new people to replace them because of Brexit."</em></p>
             <p>The BBC coverage brought national attention to the challenges facing small British fruit growers in the post-Brexit era.</p>`
-        },
-        weston: {
-            title: 'Weston Mercury Feature (2017)',
-            body: `<p>In <strong>May 2017</strong>, The Weston Mercury visited Seagers Cheddar Valley Strawberries for a feature titled <em>"TIMELINE: From greenhouse to shop floor – the story of Somerset's strawberries"</em>.</p>
-            <p>Reporter Eleanor Young documented the full journey of how strawberries go from the greenhouse to the shop floor, interviewing Chris Seagers about the family history and daily operations.</p>
-            <p>The article covered the three-generation family story, the growing process, and the business philosophy of staying small, local, and customer-focused.</p>
-            <p>Photographs from the visit showed Chris Seagers and staff member Carolyn Matthews putting out strawberries at the shop.</p>`
         },
         podcast: {
             title: 'Draycott Diaries Podcast',
